@@ -1,48 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>RunPacer – Personalized Running Plans</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>RunPacer – Coach de course & plans personnalisés</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RunPacer crée des plans d’entraînement simples et personnalisés, suit votre course en temps réel (rythme, distance, carte), affiche des statistiques claires et se connecte à Strava. Option post-partum incluse.">
+  <!-- Open Graph / SEO -->
+  <meta property="og:title" content="RunPacer – Coach de course & plans personnalisés">
+  <meta property="og:description" content="Plans personnalisés, suivi GPS en temps réel, statistiques, export GPX et connexion Strava.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://joreach3023.github.io/runpacer/">
+  <meta property="og:image" content="https://joreach3023.github.io/runpacer/assets/og-cover.png">
+  <link rel="icon" href="assets/favicon.png">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-      line-height: 1.6;
+    :root{
+      --bg:#0b1020; --txt:#e9eef6; --muted:#b6c1d1; --card:#121a33; --brand:#3498db; --ok:#2ecc71; --warn:#e67e22;
     }
-    h1, h2 {
-      color: #005eff;
-    }
-    .btn {
-      background-color: #005eff;
-      color: white;
-      padding: 0.8rem 1.2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--txt);background:linear-gradient(180deg,#0b1020, #0d1430 40%, #0f183a)}
+    a{color:var(--brand)} .container{max-width:1080px;margin:0 auto;padding:24px}
+    header{padding:56px 0 24px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{width:40px;height:40px;border-radius:10px}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:24px 0}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0}
+    .lead{font-size:clamp(16px,2.3vw,20px);color:var(--muted);margin:12px 0 20px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.15);text-decoration:none;color:var(--txt);background:#1a264d}
+    .btn.primary{background:var(--brand);border-color:transparent;color:#fff;font-weight:600}
+    .btn.ghost{background:transparent}
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .kpi{display:flex;gap:10px;align-items:flex-start}
+    .kpi i{font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:10px;border-radius:10px}
+    .screens{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    .screens img{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
+    section{padding:28px 0}
+    footer{padding:28px;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:14px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid-3,.grid-2{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <h1>Welcome to RunPacer 🏃‍♂️</h1>
-  <p><strong>RunPacer</strong> is a web and mobile app that helps runners of all levels stay motivated and progress with structured, personalized training plans. Whether you're a beginner or training for your next marathon, RunPacer adapts to you.</p>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="assets/runpacer-icon.png" alt="RunPacer">
+        <strong>RunPacer</strong>
+      </div>
+    </header>
 
-  <h2>Our Mission</h2>
-  <p>RunPacer exists to make running simpler, smarter, and more enjoyable. We believe that everyone deserves a plan that fits their life, goals, and pace.</p>
+    <section class="hero">
+      <div>
+        <h1>Ton coach de course simple et motivant</h1>
+        <p class="lead">
+          Crée des plans d’entraînement adaptés à ton niveau, suis ton rythme en temps réel (GPS), analyse tes progrès
+          et synchronise avec Strava. Une option post-partum est incluse pour une reprise en douceur.
+        </p>
+        <div class="cta">
+          <!-- Remplace # par ton lien TestFlight ou App Store -->
+          <a class="btn primary" href="#" aria-label="Télécharger RunPacer">Télécharger (TestFlight)</a>
+          <a class="btn ghost" href="privacy.html">Politique de confidentialité</a>
 
-  <ul>
-    <li>🎯 Personalized plans</li>
-    <li>📈 Track your progress with synced data</li>
-    <li>⏱️ Seamless integration with Garmin and Strava</li>
-  </ul>
-
-  <h2>Coming Soon</h2>
-  <p>We're working on Garmin Connect integration to send structured workouts directly to your watch. Stay tuned!</p>
-
-  <a class="btn" href="privacy.html">View Privacy Policy</a>
-</body>
-</html>
  
