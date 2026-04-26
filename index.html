@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>RunPacer – Coach de course & plans personnalisés</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="RunPacer crée des plans d’entraînement simples et personnalisés, suit votre course en temps réel (rythme, distance, carte), affiche des statistiques claires et se connecte à Strava. Option post-partum incluse.">
+  <meta name="description" content="RunPacer crée des plans d'entraînement simples et personnalisés, suit votre course en temps réel (rythme, distance, carte), affiche des statistiques claires et se connecte à Strava. Option post-partum incluse.">
   <!-- Open Graph / SEO -->
   <meta property="og:title" content="RunPacer – Coach de course & plans personnalisés">
   <meta property="og:description" content="Plans personnalisés, suivi GPS en temps réel, statistiques, export GPX et connexion Strava.">
@@ -16,8 +16,10 @@
     :root{
       --bg:#0b1020; --txt:#e9eef6; --muted:#b6c1d1; --card:#121a33; --brand:#3498db; --ok:#2ecc71; --warn:#e67e22;
     }
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--txt);background:linear-gradient(180deg,#0b1020, #0d1430 40%, #0f183a)}
-    a{color:var(--brand)} .container{max-width:1080px;margin:0 auto;padding:24px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--txt);background:linear-gradient(180deg,#0b1020,#0d1430 40%,#0f183a)}
+    a{color:var(--brand)}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
     header{padding:56px 0 24px;border-bottom:1px solid rgba(255,255,255,.06)}
     .logo{display:flex;align-items:center;gap:12px}
     .logo img{width:40px;height:40px;border-radius:10px}
@@ -25,119 +27,155 @@
     h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0}
     .lead{font-size:clamp(16px,2.3vw,20px);color:var(--muted);margin:12px 0 20px}
     .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.15);text-decoration:none;color:var(--txt);background:#1a264d}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:12px;border:1px solid rgba(255,255,255,.15);text-decoration:none;color:var(--txt);background:#1a264d;font-size:16px}
     .btn.primary{background:var(--brand);border-color:transparent;color:#fff;font-weight:600}
     .btn.ghost{background:transparent}
+    .testflight-note{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.5}
     .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
     .kpi{display:flex;gap:10px;align-items:flex-start}
-    .kpi i{font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:10px;border-radius:10px}
+    .kpi i{font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:10px;border-radius:10px;font-size:20px}
     .screens{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
     .screens img{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
     section{padding:28px 0}
+    .why-list{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:14px}
+    .why-list li{display:flex;align-items:flex-start;gap:14px;font-size:16px;line-height:1.5}
+    .why-list li span{font-size:22px;flex-shrink:0;margin-top:2px}
+    .cta-final{text-align:center;padding:52px 24px;background:rgba(52,152,219,.07);border:1px solid rgba(52,152,219,.2);border-radius:24px;margin:16px 0}
+    .cta-final h2{font-size:clamp(22px,3vw,36px);margin:0 0 12px}
+    .cta-final p{color:var(--muted);margin:0 0 28px;font-size:18px}
     footer{padding:28px;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:14px}
     @media (max-width:900px){.hero{grid-template-columns:1fr}.grid-3,.grid-2{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <img src="assets/runpacer-icon.png" alt="RunPacer">
-        <strong>RunPacer</strong>
-      </div>
-    </header>
+<div class="container">
 
-    <section class="hero">
-      <div>
-        <h1>Ton coach de course simple et motivant</h1>
-        <p class="lead">
-          Crée des plans d’entraînement adaptés à ton niveau, suis ton rythme en temps réel (GPS), analyse tes progrès
-          et synchronise avec Strava. Une option post-partum est incluse pour une reprise en douceur.
-        </p>
-        <div class="cta">
-          <!-- Remplace # par ton lien TestFlight ou App Store -->
-          <a class="btn primary" href="#" aria-label="Télécharger RunPacer">Télécharger (TestFlight)</a>
-          <a class="btn ghost" href="privacy.html">Politique de confidentialité</a>
+  <header>
+    <div class="logo">
+      <img src="assets/runpacer-icon.png" alt="RunPacer">
+      <strong>RunPacer</strong>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Ton coach de course simple et motivant</h1>
+      <p class="lead">
+        Crée des plans d'entraînement adaptés à ton niveau, suis ton rythme en temps réel (GPS), analyse tes progrès et synchronise avec Strava. Une option post-partum est incluse pour une reprise en douceur.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#" aria-label="Télécharger RunPacer sur TestFlight">🚀 Télécharger (TestFlight)</a>
+      </div>
+      <p class="testflight-note">
+        📱 <strong>TestFlight</strong> est l'app officielle d'Apple pour les bêtas — gratuit, sécurisé et facile à installer.
+      </p>
+    </div>
+    <div class="card">
+      <img src="assets/hero-screen.png" alt="Capture d'écran RunPacer – Suivi en direct" style="width:100%;border-radius:12px;">
+    </div>
+  </section>
+
+  <section>
+    <div class="grid-3">
+      <div class="card kpi">
+        <i>🎯</i>
+        <div>
+          <h3>Plans personnalisés</h3>
+          <p>5 km, 10 km, semi ou marathon. Choisis tes jours d'entraînement, ton objectif et laisse RunPacer générer ton programme.</p>
         </div>
+      </div>
+      <div class="card kpi">
+        <i>📍</i>
+        <div>
+          <h3>Suivi GPS en direct</h3>
+          <p>Rythme, distance, carte et feedback vocal pendant la course pour rester dans la bonne zone.</p>
+        </div>
+      </div>
+      <div class="card kpi">
+        <i>📊</i>
+        <div>
+          <h3>Statistiques & export</h3>
+          <p>Historique, graphiques, meilleurs temps et export GPX pour partager tes sorties facilement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid-2">
+      <div class="card">
+        <h3>🔗 Connexion Strava</h3>
+        <p>Synchronise tes activités et centralise tes performances avec Strava (optionnel et contrôlé par l'utilisateur).</p>
       </div>
       <div class="card">
-        <!-- Remplace par un mockup/screen -->
-        <img src="assets/hero-screen.png" alt="Capture d’écran RunPacer – Suivi en direct" style="width:100%;border-radius:12px;">
+        <h3>🤱 Option post-partum</h3>
+        <p>Reprise progressive et sécuritaire avec un plan adapté (après accord médical).</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <div class="grid-3">
-        <div class="card kpi">
-          <i>🎯</i>
-          <div>
-            <h3>Plans personnalisés</h3>
-            <p>5 km, 10 km, semi ou marathon. Choisis tes jours d’entraînement, ton objectif et laisse RunPacer générer ton programme.</p>
-          </div>
-        </div>
-        <div class="card kpi">
-          <i>📍</i>
-          <div>
-            <h3>Suivi GPS en direct</h3>
-            <p>Rythme, distance, carte et feedback vocal pendant la course pour rester dans la bonne zone.</p>
-          </div>
-        </div>
-        <div class="card kpi">
-          <i>📊</i>
-          <div>
-            <h3>Statistiques & export</h3>
-            <p>Historique, graphiques, meilleurs temps et export GPX pour partager tes sorties facilement.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section>
+    <h3>Captures d'écran</h3>
+    <div class="screens">
+      <img src="assets/screen-plan.png" alt="Plan d'entraînement">
+      <img src="assets/screen-run.png" alt="Suivi en course">
+      <img src="assets/screen-stats.png" alt="Statistiques">
+    </div>
+  </section>
 
-    <section>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Connexion Strava</h3>
-          <p>Synchronise tes activités et centralise tes performances avec Strava (optionnel et contrôlé par l’utilisateur).</p>
-        </div>
-        <div class="card">
-          <h3>Option post-partum</h3>
-          <p>Reprise progressive et sécuritaire avec un plan adapté (après accord médical).</p>
-        </div>
-      </div>
-    </section>
+  <section>
+    <div class="card">
+      <h3>Pourquoi RunPacer ?</h3>
+      <ul class="why-list">
+        <li>
+          <span>🏃</span>
+          <div><strong>Fait pour les coureurs ordinaires</strong> — pas besoin d'être un athlète. Que tu démarres à 7 min/km ou que tu vises un sous-4h, RunPacer s'adapte à toi.</div>
+        </li>
+        <li>
+          <span>🗓️</span>
+          <div><strong>Un programme qui respecte ta vie</strong> — choisis tes jours, ton objectif, ton rythme. Pas de plan imposé.</div>
+        </li>
+        <li>
+          <span>📣</span>
+          <div><strong>Coaching vocal en temps réel</strong> — RunPacer t'encourage pendant ta course pour que tu restes dans la bonne zone sans regarder ton écran.</div>
+        </li>
+        <li>
+          <span>🔒</span>
+          <div><strong>Tes données restent les tiennes</strong> — partagées avec Strava uniquement si tu le choisis, jamais vendues.</div>
+        </li>
+        <li>
+          <span>🌙</span>
+          <div><strong>Interface légère et rapide</strong> — mode sombre/clair, zéro pub, zéro fioritures.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-    <section>
-      <h3>Captures d’écran</h3>
-      <div class="screens">
-        <img src="assets/screen-plan.png" alt="Plan d’entraînement">
-        <img src="assets/screen-run.png" alt="Suivi en course">
-        <img src="assets/screen-stats.png" alt="Statistiques">
-      </div>
-    </section>
+  <section>
+    <div class="cta-final">
+      <h2>Prêt à battre ton prochain record ?</h2>
+      <p>Rejoins RunPacer et commence ton plan dès aujourd'hui.</p>
+      <a class="btn primary" href="#" aria-label="Télécharger RunPacer">🚀 Télécharger sur TestFlight</a>
+      <p class="testflight-note" style="margin-top:16px">
+        📱 TestFlight est l'app officielle d'Apple pour les bêtas — gratuit et facile à installer.
+      </p>
+    </div>
+  </section>
 
-    <section>
-      <div class="card">
-        <h3>Pourquoi RunPacer ?</h3>
-        <ul>
-          <li>Simplicité d’abord : pas besoin d’être expert pour progresser.</li>
-          <li>Objectifs clairs, progression douce, motivation constante.</li>
-          <li>Mode sombre/clair, interface légère et rapide.</li>
-        </ul>
-      </div>
-    </section>
+  <footer>
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <span>© <span id="y"></span> RunPacer</span>
+      <span>
+        <a href="privacy.html">Politique de confidentialité</a> ·
+        <a href="support.html">Support</a> ·
+        <a href="mailto:runpacer.app@gmail.com">Contact</a>
+      </span>
+    </div>
+    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  </footer>
 
-    <footer>
-      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <span>© <span id="y"></span> RunPacer</span>
-        <span>
-          <a href="privacy.html">Politique de confidentialité</a> ·
-          <a href="support.html">Support</a> ·
-          <a href="mailto:runpacer.app@gmail.com">Contact</a>
-        </span>
-      </div>
-      <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-    </footer>
-  </div>
+</div>
 </body>
 </html>
